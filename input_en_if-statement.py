@@ -1,7 +1,9 @@
-A = int(input('Getal A: '))
-B = int(input('Getal B: '))
+A = input('Getal A: ')
+B = input('Getal B: ')
 
 if A > B:
-    print('Getal A is groter dan getal B')
-elif:
-    print('Getal B is groter dan getal A')
+    Max = A
+    print('A is het grootste getal: ' + Max)
+elif A < B:
+    Min = A
+    print('B is het kleinste getal: ' + Min)
