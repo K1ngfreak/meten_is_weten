@@ -10,7 +10,7 @@ if A > B:
 elif A < B:
     Min = A
     Max = B
-    print('B is het kleinste getal: ' + Min)
+    print('A is het kleinste getal: ' + Min)
     print('Maximum: ' + Max)
     print('Minimum: ' + Min)
 else:

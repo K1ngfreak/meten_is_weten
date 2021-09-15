@@ -2,7 +2,7 @@ kaas = str(input('Is de kaas geel? '))
 if kaas == 'ja':
     gaten = str(input('Zitter er gaten in? '))
     if gaten == 'ja':
-        duur = str(input('Is de kas belachelijk duur? '))
+        duur = str(input('Is de kaas belachelijk duur? '))
         if duur == 'ja':
             print('Emmenthaler')
         else:
