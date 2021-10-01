@@ -68,7 +68,11 @@ else:
             if rijbewijs == 'ja':
                 hoed = str(input('Heeft u een hoge hoed? '))
                 if hoed == 'ja':
+<<<<<<< HEAD
                     Geslacht = str(input('Bent u een man of vrouw? '))
+=======
+                    Geslacht = str(input('Bent u een man of vrouw?'))
+>>>>>>> 23cc2d1bca4284aa8f9cbea4f1b72d66a6e8860d
                     if Geslacht == 'man':
                         snor = str(input('Heeft u een snor? '))
                         if snor == 'ja':
@@ -130,7 +134,11 @@ else:
                 if rijbewijs == 'ja':
                     hoed = str(input('Heeft u een hoge hoed? '))
                     if hoed == 'ja':
+<<<<<<< HEAD
                         Geslacht = str(input('Bent u een man of vrouw? '))
+=======
+                        Geslacht = str(input('Bent u een man of vrouw?'))
+>>>>>>> 23cc2d1bca4284aa8f9cbea4f1b72d66a6e8860d
                         if Geslacht == 'man':
                             snor = str(input('Heeft u een snor? '))
                             if snor == 'ja':
