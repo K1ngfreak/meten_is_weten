@@ -299,8 +299,13 @@ def main():
                 input('')
                 clear()
 
-                randomEncounter = int(random.randint(1,2))
-                print('Encounter: ' + str(randomEncounter))
+                randomEncounter = int(random.randint(1,100))
+                if randomEncounter >= 50:
+                    Encounter = 1
+                elif randomEncounter < 50:
+                    Encounter = 2
+
+                print('Encounter: ' + str(Encounter))
 
                 print('Do you want to continue this encounter?', 1)
                 print('If you don\'t continue, you get a different random encounter', 1)
