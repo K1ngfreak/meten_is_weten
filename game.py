@@ -1,18 +1,13 @@
+from math import e
+import random
 import time
 import os
-<<<<<<< HEAD
-=======
-from slowprint.slowprint import *
->>>>>>> 7cef8747ab07f17beea512b16a6307286916e449
+from slowprint.slowprint import*
 
 def clear():
     command = 'cls'
     os.system(command)
 
-<<<<<<< HEAD
-
-def stop():
-=======
 def quit():
     time.sleep(1)
     clear()
@@ -32,37 +27,20 @@ def died():
     time.sleep(1)
     slowprint('Do you want to try again?', 1)
     choise1 = input('Y/N: ')
->>>>>>> 7cef8747ab07f17beea512b16a6307286916e449
     clear()
-    print('De bestelling word gestopt')
+    if choise1 == 'Y':
+        restart()
+    elif choise1 == 'N':
+        quit()
+
+def won():
+    time.sleep(3)
+    slowprint('You won the game!', 1)
+    print('')
     time.sleep(1)
+    slowprint('press enter to continue', 1)
+    input('')
     clear()
-<<<<<<< HEAD
-    exit()
-
-def stap2(bo):
-
-    print('Wilt u de ' + str(bo) + ' bolletjes in een hoorntje of een bakje? ')
-    keuze = input('')
-    if keuze == 'bakje':
-        clear()
-        ba = 1
-        bakjes(bo,ba)
-    elif keuze == 'hoorntje':
-        clear()
-        ho = 1
-        hoorntjes(bo,ho)
-    elif keuze == 'back':
-        bolletjes()
-    elif keuze == 'quit':
-        stop()
-    else:
-        print('Sorry dat is geen optie die we aanbieden...')
-        time.sleep(1)
-        clear()
-        return stap2(bo)
-
-=======
     slowprint('There are 4 good endings (wins)', 1)
     slowprint('And there are 6 bad endings (losses)', 1)
     slowprint('Do you want to try again for a different ending?', 1)
@@ -102,25 +80,25 @@ slowprint('Goodluck...', 1)
 print('========================================================================')
 time.sleep(1)
 clear()
->>>>>>> 7cef8747ab07f17beea512b16a6307286916e449
 
-def hoorntjes(bo,ho):
-    print('U krijgt een hoorntje met ' + str(bo) + ' bolletjes')
-    time.sleep(2)
+for n in range(0,5):
+    if n == 0:
+        print('--------')
+    elif n == 1:
+        print('------')
+    elif n == 2:
+        print('----')
+    elif n == 3:
+        print('--')
+    time.sleep(1)
+
+slowprint('Lets begin the game!', 1)
+time.sleep(1)
+
+def main():
+    time.sleep(1)
     clear()
-    ba = 0
-    smaken(bo,ba,ho)
 
-
-def bakjes(bo,ba):
-    print('U krijgt een bakje met ' + str(bo) + ' bolletjes')
-    time.sleep(2)
-    clear()
-    ho = 0
-    smaken(bo,ba,ho)
-
-<<<<<<< HEAD
-=======
     slowprint('You are a person who is captured by the army...', 1)
     slowprint('They tell you to save a soldier who is imprisoned, ', 1)
     slowprint('You dont know what to expect...', 1)
@@ -128,16 +106,10 @@ def bakjes(bo,ba):
     slowprint('They send you to the place and you end up at a big castle!', 1)
     slowprint('Your first thought is, should I enter this castle?', 1)
     print('--------------------------------------------------------------------')
->>>>>>> 7cef8747ab07f17beea512b16a6307286916e449
 
-def bolletjes():
+    slowprint('Do you enter the castle?', 1)
+    enterCastle = input('yes / no: ')
     clear()
-<<<<<<< HEAD
-    print('Hoeveel bolletjes wilt u?')
-    bolletje = int(input(''))
-    if int(bolletje) <= 3:
-        time.sleep(0.5)
-=======
                                         # entering the castle
     if enterCastle == 'yes':
         slowprint('You have entered the castle', 1)
@@ -145,133 +117,15 @@ def bolletjes():
         
         slowprint('Which one do you go through?', 1)
         enterDoor = input('door 1 / door 2: ')
->>>>>>> 7cef8747ab07f17beea512b16a6307286916e449
         clear()
-        stap2(bolletje)
-    elif int(bolletje) <= 8:
-        time.sleep(0.5)
-        clear()
-        ba = 1
-        bakjes(bolletje, ba)
-    elif bolletje > 8:
-        print('Sorry dat is geen optie die we aanbieden...')
-        time.sleep(1)
-        clear()
-        return bolletjes()
+                                        # entering door 1
+        if enterDoor == 'door 1':
+            slowprint('You open door 1', 1)
+            slowprint('When you enter into the room the door closes behind you', 1)
+            slowprint('When the lights go on you see a room full of giant spiders', 1)
+            slowprint('You battle the spiders and...', 1)
 
-def smaken(bo,ba,ho):
-
-    vanille = 0
-    chocolade = 0
-    aardbij = 0
-
-    bo = bo + 1
-    print('Smaken:')
-    print('vannille     - V')
-    print('chocolade    - C')
-    print('aardbij      - A')
-    for s in range(1,bo):
-        smaak = input('Welke smaak wilt u voor bolletje ' + str(s) + ': ')
-        if smaak == 'V':
-            vanille = vanille + 1
-        elif smaak == 'C':
-            chocolade = chocolade + 1
-        elif smaak == 'A':
-            aardbij = aardbij + 1
-        else:
-            print('Sorry dat is geen optie die we aanbieden...')
-            bo = bo - 1
             time.sleep(1)
-<<<<<<< HEAD
-            clear()
-            return smaken(bo)
-    print('U krijgt ' + str(vanille) + ' bolletje(s) vanille')
-    print('U krijgt ' + str(chocolade) + ' bolletje(s) chocolade')
-    print('U krijgt ' + str(aardbij) + ' bolletje(s) aardbij')
-    time.sleep(5)
-    bo = bo - 1
-    clear()
-    toppings(bo,ba,ho)
-
-def toppings(bo,ba,ho):
-    print('Wat voor topping wilt U?')
-    print('A) Geen')
-    print('B) Slagroom')
-    print('C) Sprinkels')
-    print('D) Caramel Saus')
-    topping = input('Welke topping wilt U? ')
-    if topping == 'A':
-        to = 0
-        top = 1
-    elif topping == 'B':
-        to = 0.50
-        top = 1
-    elif topping == 'C':
-        to = 0.30
-        top = 1
-    elif topping == 'D':
-        if ba >= 1:
-            to = 0.90
-            top = 1
-        elif ho >= 1:
-            to = 0.60
-            top = 1
-    else:
-        print('Sorry dat is geen optie die we aanbieden...')
-    clear()
-    bestellen(bo,ba,ho,to,top)
-
-def bestellen(bo,ba,ho,to,top):
-    global bol
-    global bak
-    global hoorn
-    global topping
-    global totalTopping
-    
-    bol = bol + bo
-    bak = bak + ba
-    hoorn = hoorn + ho
-    topping = topping + to
-    totalTopping = totalTopping + top
-
-    print('Wilt u nog meer bestellen? J/N')
-    bestelling = input('')
-    if bestelling == 'J':
-        bolletjes()
-    elif bestelling == 'N':
-        time.sleep(1)
-        clear()
-        receipt(bol,bak,hoorn,topping,totalTopping)
-    else:
-        print('Sorry dat is geen optie die we aanbieden...')
-        time.sleep(1)
-        bestellen()
-
-def receipt(bo,ba,ho,to,top):
-    boll = float(bo * 0.95)
-    bakje = float(ba * 1.25)
-    hoorntje = float(ho * 0.75)
-
-    eind = float(boll + bakje + hoorntje + to)
-
-    print('---------["Papi Gelato"]---------')
-    if boll > 0:
-        print('bolletjes    ' + str(bo) + ' X €1.10    = €' + str(boll))
-    if bakje > 0:
-        print('bakjes       ' + str(ba) + ' X €1.10    = €' + str(bakje))
-    if hoorntje > 0:
-        print('hoorntjes    ' + str(ho) + ' X €1.10    = €' + str(hoorntje))
-    if to > 0:
-        print('toppings     ' + str(top) + ' X €1.10    = €' + str(to))
-    print('                         ---------- +')
-    print('Totaal                    = €' + str(eind))
-
-    time.sleep(5)
-    print('Bedankt en tot ziens!')
-    time.sleep(1)
-    clear()
-    exit()
-=======
             slowprint('You won the battle', 1)
             print('')
             slowprint('Press enter to continue', 1)
@@ -633,17 +487,19 @@ def receipt(bo,ba,ho,to,top):
                     quit()
             
             encounter()
->>>>>>> 7cef8747ab07f17beea512b16a6307286916e449
 
-bol = 0
-bak = 0
-hoorn = 0
-topping = 0
-totalTopping = 0
+        elif enterDoor == 'restart':
+            restart()
+        elif enterDoor == 'quit':
+            quit()
 
-clear()
-time.sleep(2)
+                                        # not entering the castle
+    elif enterCastle == 'no':
+        slowprint('The Guards have shot you.', 1)
+        died()
+    elif enterCastle == 'restart':
+        restart()
+    elif enterCastle == 'quit':
+        quit()
 
-print('Wekom bij Papi Gelato')
-time.sleep(2)
-bolletjes()
+main()
