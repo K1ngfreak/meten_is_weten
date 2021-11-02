@@ -2,7 +2,7 @@ from math import e
 import random
 import time
 import os
-from slowprint.slowprint import *
+from slowprint.slowprint import*
 
 def clear():
     command = 'cls'
